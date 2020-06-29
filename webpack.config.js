@@ -14,12 +14,12 @@ module.exports = {
     extensions: ['.js', '.ts', '.tsx'],
   },
   devServer: {
-    historyApiFallback: {
-      rewrites: [{
-        from: /^\/[a-z]*/,
-        to: '/index.html'
-      }],
-    },
+    // historyApiFallback: {
+    //   rewrites: [{
+    //     from: /^\/[a-z]*/,
+    //     to: '/index.html'
+    //   }],
+    // },
     contentBase: './docs',
     port: 58080,
     open: true,

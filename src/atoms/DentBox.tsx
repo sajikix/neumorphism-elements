@@ -12,20 +12,21 @@ interface BoxProps {
   height: string;
   rounded: boolean;
   depth: number;
+  flexDirection: 'column' | 'row';
 }
 
 // TODO: 背景色やsizeとか高さでshadowを調整できるようにしたい
 const Box = styled.div`
   /* form */
-  height: ${({ width }: BoxProps) => width};
-  width: ${({ height }: BoxProps) => height};
+  width: ${({ width }: BoxProps) => width};
+  height: ${({ height }: BoxProps) => height};
   border-radius: ${({ borderRadius }: BoxProps) => borderRadius};
   /* color */
   background-color: ${({ backgroudColor }: BoxProps) => backgroudColor};
   box-shadow: ${(props: BoxProps) => getBoxShadow(props, false)};
   /* flex */
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ flexDirection }: BoxProps) => flexDirection};
   justify-content: center;
   align-items: center;
 `;
@@ -40,6 +41,7 @@ interface Props {
   height?: string;
   rounded?: boolean;
   depth?: number;
+  flexDirection?: 'column' | 'row';
 }
 
 export const DentBox: FC<Props> = ({
@@ -51,6 +53,7 @@ export const DentBox: FC<Props> = ({
   height = '40vh',
   rounded = false,
   depth = 8,
+  flexDirection = 'column',
   children,
   additionalCss,
 }) => {
@@ -65,6 +68,7 @@ export const DentBox: FC<Props> = ({
       height={height}
       rounded={rounded}
       depth={depth}
+      flexDirection={flexDirection}
     >
       {children}
     </Box>

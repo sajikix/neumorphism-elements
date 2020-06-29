@@ -1,11 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Atoms, Molecules } from './pages';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Atoms, Molecules, Home } from './pages';
+import {
+  BrowserRouter as Router,
+  HashRouter,
+  Switch,
+  Route,
+} from 'react-router-dom';
 
 const Root = () => {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/atoms">
           <Atoms></Atoms>
@@ -14,10 +19,10 @@ const Root = () => {
           <Molecules></Molecules>
         </Route>
         <Route path="/">
-          <Molecules></Molecules>
+          <Home></Home>
         </Route>
       </Switch>
-    </Router>
+    </HashRouter>
   );
 };
 
