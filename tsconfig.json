@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "sourceMap": true,
+    "target": "ES2020",
+    "moduleResolution": "node",
+    "strict": true,
+    "baseUrl": "./",
+    "jsx": "preserve",
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "resolveJsonModule": true,
+    "declarationMap": true,
+    "incremental": true,
+    "skipLibCheck": true
+  }
+}

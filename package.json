@@ -1,0 +1,41 @@
+{
+  "name": "neumorphism-elements",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "repository": "git@github.com:saji-ryu/neumorphism-elements.git",
+  "author": "saji-ryu <rsajiki@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack -p --progress --config webpack.config.js",
+    "type-check": "../../node_modules/.bin/tsc --noEmit",
+    "start:dev": "NODE_ENV=development webpack-dev-server -d"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.1",
+    "@emotion/babel-preset-css-prop": "^10.0.27",
+    "@types/node": "^14.0.14",
+    "@types/react": "^16.9.38",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/react-transition-group": "^4.4.0",
+    "babel-loader": "^8.1.0",
+    "prettier": "^2.0.5",
+    "source-map-loader": "^1.0.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "10.0.27",
+    "file-loader": "^6.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-transition-group": "^4.4.1"
+  }
+}
