@@ -9,8 +9,8 @@ interface ContainerProps {
 
 const Container = styled.div`
   /* form */
-  height: ${({ width }: ContainerProps) => width};
-  width: ${({ height }: ContainerProps) => height};
+  height: ${({ height }: ContainerProps) => height};
+  width: ${({ width }: ContainerProps) => width};
   /* flex */
   display: flex;
   flex-direction: column;
@@ -34,11 +34,13 @@ interface Props {
   bumpDepth?: number;
   dentBoxRender?: () => ReactElement;
   bumpBoxRender?: () => ReactElement;
+  onClick?: () => void;
 }
 
 export const Button: FC<Props> = ({
   width = '40vh',
   height = '40vh',
+  borderRadius = '10%',
   dentBackgroudColor,
   dentShadowColor,
   dentHighlightColor,
@@ -51,6 +53,7 @@ export const Button: FC<Props> = ({
   bumpDepth,
   dentBoxRender,
   bumpBoxRender,
+  onClick,
 }) => {
   const [clicked, setClicked] = useState(false);
   return (
@@ -58,7 +61,10 @@ export const Button: FC<Props> = ({
       width={width}
       height={height}
       onMouseDown={() => setClicked(true)}
-      onMouseUp={() => setClicked(false)}
+      onMouseUp={() => {
+        setClicked(false);
+        onClick?.();
+      }}
     >
       {clicked ? (
         <DentBox
@@ -69,6 +75,7 @@ export const Button: FC<Props> = ({
           depth={dentDepth}
           width={width}
           height={height}
+          borderRadius={borderRadius}
         >
           {dentBoxRender?.()}
         </DentBox>
@@ -81,6 +88,7 @@ export const Button: FC<Props> = ({
           depth={bumpDepth}
           width={width}
           height={height}
+          borderRadius={borderRadius}
         >
           {bumpBoxRender?.()}
         </BumpBox>
